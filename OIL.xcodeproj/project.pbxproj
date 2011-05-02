@@ -1,0 +1,211 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E248B60136EFF05008B5699 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E248B5F136EFF05008B5699 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6E248B5C136EFF05008B5699 /* libOIL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOIL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E248B5F136EFF05008B5699 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6E248B63136EFF05008B5699 /* OIL-Prefix.pch */ = {isa = PBXFileReference; path = "OIL-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E248B59136EFF05008B5699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E248B60136EFF05008B5699 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E248B51136EFF05008B5699 = {
+			isa = PBXGroup;
+			children = (
+				6E248B61136EFF05008B5699 /* OIL */,
+				6E248B5E136EFF05008B5699 /* Frameworks */,
+				6E248B5D136EFF05008B5699 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E248B5D136EFF05008B5699 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E248B5C136EFF05008B5699 /* libOIL.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E248B5E136EFF05008B5699 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E248B5F136EFF05008B5699 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E248B61136EFF05008B5699 /* OIL */ = {
+			isa = PBXGroup;
+			children = (
+				6E248B62136EFF05008B5699 /* Supporting Files */,
+			);
+			path = OIL;
+			sourceTree = "<group>";
+		};
+		6E248B62136EFF05008B5699 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E248B63136EFF05008B5699 /* OIL-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6E248B5A136EFF05008B5699 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6E248B5B136EFF05008B5699 /* OIL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E248B66136EFF05008B5699 /* Build configuration list for PBXNativeTarget "OIL" */;
+			buildPhases = (
+				6E248B58136EFF05008B5699 /* Sources */,
+				6E248B59136EFF05008B5699 /* Frameworks */,
+				6E248B5A136EFF05008B5699 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OIL;
+			productName = OIL;
+			productReference = 6E248B5C136EFF05008B5699 /* libOIL.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E248B53136EFF05008B5699 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 6E248B56136EFF05008B5699 /* Build configuration list for PBXProject "OIL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6E248B51136EFF05008B5699;
+			productRefGroup = 6E248B5D136EFF05008B5699 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E248B5B136EFF05008B5699 /* OIL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E248B58136EFF05008B5699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6E248B64136EFF05008B5699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6E248B65136EFF05008B5699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		6E248B67136EFF05008B5699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/OIL.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OIL/OIL-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6E248B68136EFF05008B5699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/OIL.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OIL/OIL-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E248B56136EFF05008B5699 /* Build configuration list for PBXProject "OIL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E248B64136EFF05008B5699 /* Debug */,
+				6E248B65136EFF05008B5699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E248B66136EFF05008B5699 /* Build configuration list for PBXNativeTarget "OIL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E248B67136EFF05008B5699 /* Debug */,
+				6E248B68136EFF05008B5699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E248B53136EFF05008B5699 /* Project object */;
+}
