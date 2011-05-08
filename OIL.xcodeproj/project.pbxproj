@@ -8,12 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		6E248B60136EFF05008B5699 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E248B5F136EFF05008B5699 /* Foundation.framework */; };
+		6E248B6B136F0182008B5699 /* OILContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E248B69136F0182008B5699 /* OILContainer.h */; };
+		6E248B6C136F0182008B5699 /* OILContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E248B6A136F0182008B5699 /* OILContainer.m */; };
+		6E248B74136F025C008B5699 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E248B73136F025C008B5699 /* UIKit.framework */; };
+		6E248B75136F025C008B5699 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E248B5F136EFF05008B5699 /* Foundation.framework */; };
+		6E248B77136F025C008B5699 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E248B76136F025C008B5699 /* CoreGraphics.framework */; };
+		6E248B7D136F025C008B5699 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E248B7B136F025C008B5699 /* InfoPlist.strings */; };
+		6E248B83136F025C008B5699 /* TestsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E248B82136F025C008B5699 /* TestsAppDelegate.m */; };
+		6E248B8B136F0270008B5699 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E248B8A136F0270008B5699 /* GHUnitIOS.framework */; };
+		6E248B8D136F0367008B5699 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E248B8C136F0367008B5699 /* GHUnitIOSTestMain.m */; };
+		6E52287C136F180900D89ECD /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52287B136F180900D89ECD /* Book.m */; };
+		6E522888136FF97C00D89ECD /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E522887136FF97C00D89ECD /* Author.m */; };
+		6EA32F58136F061800A49C8F /* OILContainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E248B8F136F03FA008B5699 /* OILContainerTests.m */; };
+		6EA32F5E136F0B6900A49C8F /* OILContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E248B6A136F0182008B5699 /* OILContainer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E248B5C136EFF05008B5699 /* libOIL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOIL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E248B5F136EFF05008B5699 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		6E248B63136EFF05008B5699 /* OIL-Prefix.pch */ = {isa = PBXFileReference; path = "OIL-Prefix.pch"; sourceTree = "<group>"; };
+		6E248B63136EFF05008B5699 /* OIL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OIL-Prefix.pch"; sourceTree = "<group>"; };
+		6E248B69136F0182008B5699 /* OILContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OILContainer.h; sourceTree = "<group>"; };
+		6E248B6A136F0182008B5699 /* OILContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OILContainer.m; sourceTree = "<group>"; };
+		6E248B71136F025C008B5699 /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E248B73136F025C008B5699 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6E248B76136F025C008B5699 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6E248B7A136F025C008B5699 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		6E248B7C136F025C008B5699 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E248B7E136F025C008B5699 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		6E248B81136F025C008B5699 /* TestsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestsAppDelegate.h; sourceTree = "<group>"; };
+		6E248B82136F025C008B5699 /* TestsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestsAppDelegate.m; sourceTree = "<group>"; };
+		6E248B8A136F0270008B5699 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
+		6E248B8C136F0367008B5699 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIOSTestMain.m; sourceTree = "<group>"; };
+		6E248B8E136F03FA008B5699 /* OILContainerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OILContainerTests.h; sourceTree = "<group>"; };
+		6E248B8F136F03FA008B5699 /* OILContainerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OILContainerTests.m; sourceTree = "<group>"; };
+		6E52287A136F180900D89ECD /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		6E52287B136F180900D89ECD /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		6E522886136FF97C00D89ECD /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		6E522887136FF97C00D89ECD /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +56,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6E248B6E136F025C008B5699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E248B74136F025C008B5699 /* UIKit.framework in Frameworks */,
+				6E248B75136F025C008B5699 /* Foundation.framework in Frameworks */,
+				6E248B77136F025C008B5699 /* CoreGraphics.framework in Frameworks */,
+				6E248B8B136F0270008B5699 /* GHUnitIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -32,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				6E248B61136EFF05008B5699 /* OIL */,
+				6E248B78136F025C008B5699 /* Tests */,
 				6E248B5E136EFF05008B5699 /* Frameworks */,
 				6E248B5D136EFF05008B5699 /* Products */,
 			);
@@ -41,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				6E248B5C136EFF05008B5699 /* libOIL.a */,
+				6E248B71136F025C008B5699 /* Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,7 +92,10 @@
 		6E248B5E136EFF05008B5699 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E248B8A136F0270008B5699 /* GHUnitIOS.framework */,
 				6E248B5F136EFF05008B5699 /* Foundation.framework */,
+				6E248B73136F025C008B5699 /* UIKit.framework */,
+				6E248B76136F025C008B5699 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -57,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				6E248B62136EFF05008B5699 /* Supporting Files */,
+				6E248B69136F0182008B5699 /* OILContainer.h */,
+				6E248B6A136F0182008B5699 /* OILContainer.m */,
 			);
 			path = OIL;
 			sourceTree = "<group>";
@@ -69,6 +118,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6E248B78136F025C008B5699 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6E522878136F17DC00D89ECD /* Test Classes */,
+				6E248B79136F025C008B5699 /* Supporting Files */,
+				6E248B8E136F03FA008B5699 /* OILContainerTests.h */,
+				6E248B8F136F03FA008B5699 /* OILContainerTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		6E248B79136F025C008B5699 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E248B81136F025C008B5699 /* TestsAppDelegate.h */,
+				6E248B82136F025C008B5699 /* TestsAppDelegate.m */,
+				6E248B8C136F0367008B5699 /* GHUnitIOSTestMain.m */,
+				6E248B7A136F025C008B5699 /* Tests-Info.plist */,
+				6E248B7B136F025C008B5699 /* InfoPlist.strings */,
+				6E248B7E136F025C008B5699 /* Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E522878136F17DC00D89ECD /* Test Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6E52287A136F180900D89ECD /* Book.h */,
+				6E52287B136F180900D89ECD /* Book.m */,
+				6E522886136FF97C00D89ECD /* Author.h */,
+				6E522887136FF97C00D89ECD /* Author.m */,
+			);
+			name = "Test Classes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -76,6 +160,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E248B6B136F0182008B5699 /* OILContainer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +184,23 @@
 			productReference = 6E248B5C136EFF05008B5699 /* libOIL.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		6E248B70136F025C008B5699 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E248B87136F025C008B5699 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				6E248B6D136F025C008B5699 /* Sources */,
+				6E248B6E136F025C008B5699 /* Frameworks */,
+				6E248B6F136F025C008B5699 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 6E248B71136F025C008B5699 /* Tests.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -117,19 +219,56 @@
 			projectRoot = "";
 			targets = (
 				6E248B5B136EFF05008B5699 /* OIL */,
+				6E248B70136F025C008B5699 /* Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E248B6F136F025C008B5699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E248B7D136F025C008B5699 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6E248B58136EFF05008B5699 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E248B6C136F0182008B5699 /* OILContainer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E248B6D136F025C008B5699 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E248B83136F025C008B5699 /* TestsAppDelegate.m in Sources */,
+				6E248B8D136F0367008B5699 /* GHUnitIOSTestMain.m in Sources */,
+				6EA32F58136F061800A49C8F /* OILContainerTests.m in Sources */,
+				6EA32F5E136F0B6900A49C8F /* OILContainer.m in Sources */,
+				6E52287C136F180900D89ECD /* Book.m in Sources */,
+				6E522888136FF97C00D89ECD /* Author.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6E248B7B136F025C008B5699 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E248B7C136F025C008B5699 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6E248B64136EFF05008B5699 /* Debug */ = {
@@ -185,6 +324,53 @@
 			};
 			name = Release;
 		};
+		6E248B88136F025C008B5699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6E248B89136F025C008B5699 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -204,6 +390,16 @@
 				6E248B68136EFF05008B5699 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E248B87136F025C008B5699 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E248B88136F025C008B5699 /* Debug */,
+				6E248B89136F025C008B5699 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
