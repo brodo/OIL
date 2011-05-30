@@ -38,6 +38,7 @@
     Book* book2 = [testContainer getInstance:[Book class]];
     GHAssertEquals(book1, book2, @"Both variables should point to the same instance.");
     
+        
 }
 
 -(void)testComplexObject{
@@ -45,7 +46,6 @@
          return (id)[[Author alloc] initWithFirstName:@"HG" andLastName:@"Wells"];
     } forClass:[Author class]];
       
-    
     [testContainer setInitializer:
      ^(OILContainer* cont){
          return (id)[[Book alloc] initWithTitle:@"test" andAuthor:[cont getInstance:[Author class]]];
