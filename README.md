@@ -27,7 +27,7 @@ OIL will instantiate myObject by simply calling `[[MyClass alloc] init]`.
 Initializer And Setter Injection
 --------------------------------
 
-If you want it use a different init method or if you want to set certain instance variables directly after creation of the object you need to provide an *OILInitBlock*. Each class can have one init block. Init blocks are executed, when `getInstance` is called they do all initialisation and return the object.
+If you want it to use a different init method or if you want to set certain instance variables directly after creation of the object you need to provide an *OILInitBlock*. Each class can have one init block. Init blocks are executed, when `getInstance` is called they do all initialisation and return the object.
 
     //Set up an OILConteainer
     OILContainer* myContainer = [[OILContainer alloc] init];
