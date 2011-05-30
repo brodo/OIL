@@ -17,7 +17,7 @@ Getting Started
 
 The code below creates a new container and uses this container to create an instance of the class 'MyClass'.
 
-    //First, set up an OILConteainer
+    //First, set up an OILContainer
     OILContainer* myContainer = [[OILContainer alloc] init];
     //To get a new object of class MyClass, do this:
     MyClass *myObjec = [myContainer getInstance:[MyClass class]];
