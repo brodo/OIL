@@ -20,7 +20,7 @@ The code below creates a new container and uses this container to create an inst
     //First, set up an OILContainer
     OILContainer* myContainer = [[OILContainer alloc] init];
     //To get a new object of class MyClass, do this:
-    MyClass *myObjec = [myContainer getInstance:[MyClass class]];
+    MyClass *myObject = [myContainer getInstance:[MyClass class]];
 
 OIL will instantiate myObject by simply calling `[[MyClass alloc] init]`. 
 
