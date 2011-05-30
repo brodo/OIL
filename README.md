@@ -1,7 +1,7 @@
 Overview
 ========
 
-*O*bjective C Dependency *I*njection *L*ibrary (OIL) is a tiny (>200 loc) dependency injection library for Objective C consisting only of one class. It supports both setter and initializer injection, singletons and protocol binding. All Configuration is done in the source code itself, so there is no need for config files.
+Objective C Dependency Injection Library (OIL) is a tiny (>200 loc) dependency injection library for Objective C consisting only of one class. It supports both setter and initializer injection, singletons and protocol bindings. All Configuration is done in the source code itself, so there is no need for config files.
 
 
 Setting Up OIL
@@ -34,7 +34,7 @@ If you want it use a different init method or if you want to set certain instanc
     //This tells OILContainer what to do if the user wants a new instance of 'MyClass':
     [myContainer setInitializer:^(OILContainer container){
         id myObject = [[MyClass alloc] initWithNumber:5]; //calling custom init method
-        myObject.attribute = @"test"; //setting a inistance variable
+        myObject.attribute = @"test"; //setting an inistance variable
 
     } forClass:[MyClass class]];
     
@@ -48,7 +48,7 @@ Creating Object Hierarchies
 
 Consider the following Classes:
 
-    **Author.h**
+**Author.h**
     @interface Author : NSObject {
        NSString* firstName;
        NSString* lastName;
@@ -57,7 +57,7 @@ Consider the following Classes:
     -(Author*)initWithFirstName:(NSString*)theFistName andLastName:(NSString*)theLastName;
     @end
 
-    **Book.h**
+**Book.h**
     @interface Book : NSObject {
         NSString* title;
         Author* author;
@@ -67,7 +67,7 @@ Consider the following Classes:
     
 The class 'Book' depends on 'Author'. In order to let OIL create both the book and the author with their designated initializers, you need to call OIL in the initialisation code like this:
 
-     //Set up an OILConteainer
+    //Set up an OILConteainer
     OILContainer* myContainer = [[OILContainer alloc] init];
     //Set initializer for 'Author'
     [myContainer setInitializer:^(OILContainer* cont){
@@ -80,4 +80,10 @@ The class 'Book' depends on 'Author'. In order to let OIL create both the book a
     } forClass:[Book class]];
     //Create book instance
     Book* myBook = [testContainer getInstance:[Book class]];
+
+Binding Protocols To Classes
+----------------------------
+
+Singletons
+----------
     
