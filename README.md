@@ -7,7 +7,7 @@ Objective C Dependency Injection Library (OIL) is a tiny (>200 loc) dependency i
 Setting Up OIL
 ==============
 
-[Download](https://github.com/downloads/brodo/OIL/OILContainer.zip) and extract OIL in your project directory. It contains only *OILContainer.h* and *OILContainer.m*. Add these files to your XCode project.
+[Download](https://github.com/downloads/brodo/OIL/OILContainer.zip) and extract OILContainer.zip in your project directory. It contains only *OILContainer.h* and *OILContainer.m*. Add these files to your XCode project.
 
 Using OIL
 =========
@@ -49,6 +49,7 @@ Creating Object Hierarchies
 Consider the following Classes:
 
 **Author.h**
+
     @interface Author : NSObject {
        NSString* firstName;
        NSString* lastName;
@@ -58,6 +59,7 @@ Consider the following Classes:
     @end
 
 **Book.h**
+
     @interface Book : NSObject {
         NSString* title;
         Author* author;
