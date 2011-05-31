@@ -1,7 +1,7 @@
 Overview
 ========
 
-Objective C Dependency Injection Library (OIL) is a tiny (<200 loc) dependency injection library for Objective C consisting only of one class. It supports both setter and initializer injection, singletons and protocol bindings. All Configuration is done in the source code itself, so there is no need for config files.
+Objective C Dependency Injection Library (OIL) is a tiny dependency injection library for Objective C consisting only of one class. It supports both setter and initializer injection, singletons and I'm working on protocol bindings. All Configuration is done in the source code itself, so there is no need for config files.
 
 
 Setting Up OIL
@@ -86,6 +86,9 @@ The class 'Book' depends on 'Author'. In order to let OIL create both the book a
 Binding Protocols To Classes
 ----------------------------
 
+NOT YET IMPLEMENTED
+
 Singletons
 ----------
-    
+
+NOT YET DOCUMENTED
