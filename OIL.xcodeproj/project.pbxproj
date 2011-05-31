@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E14AF6D1394FE5000BF8F1F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		6E248B5C136EFF05008B5699 /* libOIL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOIL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E248B5F136EFF05008B5699 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E248B63136EFF05008B5699 /* OIL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OIL-Prefix.pch"; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 				6E52287B136F180900D89ECD /* Book.m */,
 				6E522886136FF97C00D89ECD /* Author.h */,
 				6E522887136FF97C00D89ECD /* Author.m */,
+				6E14AF6D1394FE5000BF8F1F /* Person.h */,
 			);
 			name = "Test Classes";
 			sourceTree = "<group>";

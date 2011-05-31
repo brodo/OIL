@@ -37,8 +37,6 @@
     Book* book1 = [testContainer getInstance:[Book class]];
     Book* book2 = [testContainer getInstance:[Book class]];
     GHAssertEquals(book1, book2, @"Both variables should point to the same instance.");
-    
-        
 }
 
 -(void)testComplexObject{
@@ -54,6 +52,15 @@
     GHAssertEqualStrings(testBook.title,@"test", @"Book initialization went wrong");
     GHAssertEqualStrings(testBook.author.firstName, @"HG", @"Author initialisazion went wrong");
 
+}
+
+-(void)testProtocolBinding{
+    Protocol* person = @protocol(Person); 
+    [testContainer setInitializer:^(OILContainer* cont){return (id)[[Author alloc] init];} forProtocol:person];
+    id<Person> myPerson = [testContainer getInstanceForProtcol:person];
+    GHAssertNil(myPerson, @"Should have been created by AOPContainer");
+    GHAssertTrue([myPerson isKindOfClass:[Author class]], @"Person should be bound to author");
+    
 }
 
 @end

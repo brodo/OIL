@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
 
-
-@interface Author : NSObject {
+@interface Author : NSObject <Person> {
     NSString* firstName;
     NSString* lastName;
 }

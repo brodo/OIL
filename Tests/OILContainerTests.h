@@ -10,6 +10,7 @@
 #import <GHUnitIOS/GHUnit.h>
 #import "Book.h"
 #import "Author.h"
+#import "Person.h"
 #import "OILContainer.h"
 
 
