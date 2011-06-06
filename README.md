@@ -1,7 +1,7 @@
 Overview
 ========
 
-Objective C Dependency Injection Library (OIL) is a tiny dependency injection library for Objective C consisting only of one class. It supports both setter and initializer injection, singletons and I'm working on protocol bindings. All Configuration is done in the source code itself, so there is no need for config files.
+Objective C Dependency Injection Library (OIL) is a tiny dependency injection library for Objective C consisting only of one class. It supports both setter and initializer injection, singletons and protocol bindings. All Configuration is done in the source code itself, so there is no need for config files.
 
 
 Setting Up OIL
@@ -46,7 +46,7 @@ Init blocks take an OILContainer and return the Object which they initialized.
 Creating Object Hierarchies
 ---------------------------
 
-Consider the following Classes:
+In many cases, an object created by OIL is based on other objects which themselves need to be instantiated by OIL. As an example, consider the following Classes:
 
 **Author.h**
 
@@ -67,7 +67,7 @@ Consider the following Classes:
     -(Book*)initWithTitle:(NSString*)theTitle andAuthor:(Author*)theAuthor;
     @end
     
-The class 'Book' depends on 'Author'. In order to let OIL create both the book and the author with their designated initializers, you need to call OIL in the initialisation code like this:
+The class 'Book' depends on 'Author'. In order to let OIL create both the book and the author with their designated initializers, you need to call OIL in the initialization code like this:
 
     //Set up an OILConteainer
     OILContainer* myContainer = [[OILContainer alloc] init];
@@ -83,12 +83,26 @@ The class 'Book' depends on 'Author'. In order to let OIL create both the book a
     //Create book instance
     Book* myBook = [testContainer getInstance:[Book class]];
 
+OIL now creates the book with the author HG Wells.
+
 Binding Protocols To Classes
 ----------------------------
 
-NOT YET IMPLEMENTED
+It is possible to bind a protocol to a certain class which implements the protocol like this:
+
+    //Set up an OILConteainer
+    OILContainer* myContainer = [[OILContainer alloc] init];
+    Protocol* person = @protocol(Person); //'Person' is a protocoll which is implemented by 'Author'
+    [myContainer setInitializer:^(OILContainer* cont){return (id)[[Author alloc] initWithFirstName:@"HG" andLastName:@"Wells"];} forProtocol:person];
+    id<Person> myPerson = [myContainer getInstanceForProtcol:person]; //myPerson is an instance of 'Author'
+   
 
 Singletons
 ----------
 
-NOT YET DOCUMENTED
+You can mark a certain class or protocol as singleton, by calling the *markClassAsSingleton* or *markProtocolAsSingleton* methods like so:
+
+    [myContainer markClassAsSingleton:[MyClass class]];
+    [myContainer markProtocolAsSingleton:@protocol(MyProtocoll)];
+
+Singletons are created lazily, as soon as they are needed.

@@ -56,9 +56,9 @@
 
 -(void)testProtocolBinding{
     Protocol* person = @protocol(Person); 
-    [testContainer setInitializer:^(OILContainer* cont){return (id)[[Author alloc] init];} forProtocol:person];
+    [testContainer setInitializer:^(OILContainer* cont){return (id)[[Author alloc] initWithFirstName:@"HG" andLastName:@"Wells"];} forProtocol:person];
     id<Person> myPerson = [testContainer getInstanceForProtcol:person];
-    GHAssertNil(myPerson, @"Should have been created by AOPContainer");
+    GHAssertNotNil(myPerson, @"Should have been created by AOPContainer");
     GHAssertTrue([myPerson isKindOfClass:[Author class]], @"Person should be bound to author");
     
 }
