@@ -3624,7 +3624,7 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>329053057.58427101</real>
+		<real>329053829.23702103</real>
 		<string>{192, 796}</string>
 		<string>{814, 23}</string>
 		<string>-markProtocolAsSingleton:</string>
@@ -4761,7 +4761,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>329053057.58360398</real>
+		<real>329053829.236494</real>
 		<string>{0, 468}</string>
 		<string>{219, 0}</string>
 		<string>@interface Author</string>
@@ -5909,7 +5909,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>126</integer>
+					<integer>13</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -6563,9 +6563,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>329053057.58492398</real>
-		<string>{136, 1224}</string>
-		<string>{1158, 0}</string>
+		<real>329053829.23753202</real>
+		<string>{136, 2211}</string>
+		<string>{1158, 58}</string>
 		<string>-testSingleton</string>
 		<dict>
 			<key>$class</key>
@@ -6599,7 +6599,7 @@
 				</dict>
 			</array>
 		</dict>
-		<string>{{0, 0}, {975, 551}}</string>
+		<string>{{0, 0}, {975, 815}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -11334,9 +11334,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>329053057.58098602</real>
-		<string>{136, 1224}</string>
-		<string>{1158, 0}</string>
+		<real>329053829.22658402</real>
+		<string>{136, 2211}</string>
+		<string>{1158, 58}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -11382,7 +11382,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>329053057.58112502</real>
+		<real>329053829.22668099</real>
 		<string>{192, 796}</string>
 		<string>{814, 23}</string>
 		<dict>
@@ -11430,7 +11430,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>329053057.581204</real>
+		<real>329053829.22674203</real>
 		<string>{0, 468}</string>
 		<string>{219, 0}</string>
 		<dict>

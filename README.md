@@ -29,6 +29,7 @@ Initializer And Setter Injection
 
 If you want OIL to use a different init method, or if you want to set certain instance variables directly after creation of the object, you need to provide an *OILInitBlock*. Each class can have one init block. Init blocks are executed, when `getInstance` is called. They do all initialisation and return the object.
 
+```objective-c
     //Set up an OILContainer
     OILContainer* myContainer = [[OILContainer alloc] init];
     //This tells OILContainer what to do if the user wants a new instance of 'MyClass':
@@ -40,6 +41,7 @@ If you want OIL to use a different init method, or if you want to set certain in
     
     //Get a new instance of MyClass. It will be initialized with the init block which we just provided.
     MyClass *myObjec = [myContainer getInstance:[MyClass class]];
+```
 
 Init blocks take an OILContainer and return the Object which they initialized.
 
@@ -50,7 +52,7 @@ In many cases, an object created by OIL is based on other objects which themselv
 
 **Author.h**
 
-    @interface Author : NSObject {
+    @interface Author : NSO:wbject {
        NSString* firstName;
        NSString* lastName;
     }

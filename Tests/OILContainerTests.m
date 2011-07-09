@@ -37,6 +37,9 @@
     Book* book1 = [testContainer getInstance:[Book class]];
     Book* book2 = [testContainer getInstance:[Book class]];
     GHAssertEquals(book1, book2, @"Both variables should point to the same instance.");
+    
+    [testContainer markProtocolAsSingleton:@protocol(Person)];
+    
 }
 
 -(void)testComplexObject{
