@@ -17,10 +17,12 @@ Getting Started
 
 The code below creates a new container and uses this container to create an instance of the class 'MyClass'.
 
+```objective-c
     //First, set up an OILContainer
     OILContainer* myContainer = [[OILContainer alloc] init];
     //To get a new object of class MyClass, do this:
     MyClass *myObject = [myContainer getInstance:[MyClass class]];
+```
 
 OIL will instantiate myObject by simply calling `[[MyClass alloc] init]`. 
 
@@ -52,6 +54,7 @@ In many cases, an object created by OIL is based on other objects which themselv
 
 **Author.h**
 
+```objective-c
     @interface Author : NSO:wbject {
        NSString* firstName;
        NSString* lastName;
@@ -59,18 +62,22 @@ In many cases, an object created by OIL is based on other objects which themselv
 
     -(Author*)initWithFirstName:(NSString*)theFistName andLastName:(NSString*)theLastName;
     @end
+```
 
 **Book.h**
 
+```objective-c
     @interface Book : NSObject {
         NSString* title;
         Author* author;
     }
     -(Book*)initWithTitle:(NSString*)theTitle andAuthor:(Author*)theAuthor;
     @end
-    
+```
+
 The class 'Book' depends on 'Author'. In order to let OIL create both the book and the author with their designated initializers, you need to call OIL in the initialization code like this:
 
+```objective-c
     //Set up an OILConteainer
     OILContainer* myContainer = [[OILContainer alloc] init];
     //Set initializer for 'Author'
@@ -84,6 +91,7 @@ The class 'Book' depends on 'Author'. In order to let OIL create both the book a
     } forClass:[Book class]];
     //Create book instance
     Book* myBook = [testContainer getInstance:[Book class]];
+```
 
 OIL now creates the book with the author HG Wells.
 
@@ -104,7 +112,9 @@ Singletons
 
 You can mark a certain class or protocol as singleton, by calling the *markClassAsSingleton* or *markProtocolAsSingleton* methods like so:
 
+```objective-c
     [myContainer markClassAsSingleton:[MyClass class]];
     [myContainer markProtocolAsSingleton:@protocol(MyProtocoll)];
+```
 
 Singletons are created lazily, as soon as they are needed.
