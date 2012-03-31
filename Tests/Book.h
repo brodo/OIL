@@ -3,14 +3,14 @@
 //  OIL
 //
 //  Created by Julian Dax on 02.05.11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Julian Dax. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "Author.h"
+#import "OILInjectable.h"
 
-
-@interface Book : NSObject {
+@interface Book : NSObject <OILInjectable>{
     NSString* title;
     Author* author;
 }
@@ -19,5 +19,6 @@
 
 @property (nonatomic) NSString* title;
 @property (nonatomic) Author* author;
+@property (nonatomic) Author* injectedAuthor;
 
 @end

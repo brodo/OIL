@@ -3,10 +3,11 @@
 //  OIL
 //
 //  Created by Julian Dax on 02.05.11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Julian Dax. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
 
 
 

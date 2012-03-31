@@ -16,6 +16,8 @@ static OILContainer* globalContainer;
 -(id)getSingletonForProtocol:(Protocol*) theProtocol;
 -(id)getNewForClass:(Class)theClass;
 -(id)getNewForProtocol:(Protocol*)theProtocol;
+-(void)setUpSetterInjection;
+-(id)universalGetter;
 
 @end
 
@@ -32,6 +34,7 @@ static OILContainer* globalContainer;
         _singletonInstances = [[NSMutableDictionary alloc] init];
         _protocolSingletonInstances = [[NSMutableDictionary alloc]init];
         globalContainer = nil;
+        [self setUpSetterInjection];
     }
     return self;
 }
@@ -128,6 +131,40 @@ static OILContainer* globalContainer;
         [_protocolSingletonInstances setObject:retunObject forKey:NSStringFromProtocol(theProtocol)];
     }
     return retunObject;
+}
+
+-(void)setUpSetterInjection{
+    // Get all Classes 
+    int numClasses;
+    Class *classes = NULL;
+    
+    classes = NULL;
+    numClasses = objc_getClassList(NULL, 0);
+    NSLog(@"Number of classes: %d", numClasses);
+    
+    if (numClasses > 0 )
+    {
+        classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
+        numClasses = objc_getClassList(classes, numClasses);
+        for (int i = 0; i < numClasses; i++) {
+            if (class_conformsToProtocol(classes[i], NSProtocolFromString(@"OILInjectable"))) { // We only care for classes marked with that protocol
+                unsigned int numProperites;
+                objc_property_t *  properties = class_copyPropertyList(classes[i], &numProperites);
+                for (int j = 0; j < numProperites; j++) {
+                    NSString* propertyName =[NSString stringWithCString:property_getName(properties[j]) encoding:NSASCIIStringEncoding];
+                    if ([[propertyName substringToIndex:8] isEqualToString:@"injected"]) {
+                        
+                    }
+                }
+            }
+        }
+        free(classes);
+    }
+}
+
+
+-(id)universalGetter{
+    
 }
 
 @end

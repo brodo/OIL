@@ -11,6 +11,7 @@
 @implementation Book
 
 @synthesize title, author;
+@dynamic injectedAuthor;
 
 -(Book*)initWithTitle:(NSString*)theTitle {
     self = [super init];
