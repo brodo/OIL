@@ -81,7 +81,7 @@ Setter Injection
 --------------------------------
 
 To use setter injection, your class needs to implement the empty *OILInjectable* protocol.
-To inject an object, create a property called *injeced<Class>* of type *<Class>*. In the following example, the injected class in called *Author*
+To inject an object, create a property called *injecedClass* of type *Class*. In the following example, the injected class in called *Author*
 so the property is called *injectedAuthor*.
 
 **Setter injection currently only works with the global container and with concrete classes.**
