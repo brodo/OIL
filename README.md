@@ -80,7 +80,7 @@ Use *[OILContainer container]* to get an OILContainer singleton object. It is no
 Setter Injection
 --------------------------------
 
-To user setter injection, your class needs to implement the empty *OILInjectable* protocol.
+To use setter injection, your class needs to implement the empty *OILInjectable* protocol.
 To inject an object, create a property called *injeced<Class>* of type *<Class>*. In the following example, the injected class in called *Author*
 so the property is called *injectedAuthor*.
 
