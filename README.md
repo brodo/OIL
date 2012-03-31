@@ -71,10 +71,10 @@ You can mark a certain class or protocol as singleton, by calling the *markClass
 
 Singletons are created lazily, as soon as they are needed.
 
-The Container Singleton
+The global Container
 -----------------------
 
-Use *[OILContainer container]* to get an OILContainer singleton object. It is not ensured or assumed that this is the only Container in the app. 
+Use *[OILContainer container]* to get the global OILContainer object. It is not ensured or assumed that this is the only container in the app. 
 
 
 Setter Injection
