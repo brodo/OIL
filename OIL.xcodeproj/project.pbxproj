@@ -19,7 +19,6 @@
 		6E248B8D136F0367008B5699 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E248B8C136F0367008B5699 /* GHUnitIOSTestMain.m */; };
 		6E52287C136F180900D89ECD /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52287B136F180900D89ECD /* Book.m */; };
 		6E522888136FF97C00D89ECD /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E522887136FF97C00D89ECD /* Author.m */; };
-		6E8A13F51527231600FB3AAC /* OILInjectable.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E8A13F41527231600FB3AAC /* OILInjectable.h */; };
 		6EA32F58136F061800A49C8F /* OILContainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E248B8F136F03FA008B5699 /* OILContainerTests.m */; };
 		6EA32F5E136F0B6900A49C8F /* OILContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E248B6A136F0182008B5699 /* OILContainer.m */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		6E52287B136F180900D89ECD /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		6E522886136FF97C00D89ECD /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
 		6E522887136FF97C00D89ECD /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
-		6E8A13F41527231600FB3AAC /* OILInjectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OILInjectable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +104,6 @@
 		6E248B61136EFF05008B5699 /* OIL */ = {
 			isa = PBXGroup;
 			children = (
-				6E8A13F41527231600FB3AAC /* OILInjectable.h */,
 				6E248B62136EFF05008B5699 /* Supporting Files */,
 				6E248B69136F0182008B5699 /* OILContainer.h */,
 				6E248B6A136F0182008B5699 /* OILContainer.m */,
@@ -166,7 +163,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E248B6B136F0182008B5699 /* OILContainer.h in Headers */,
-				6E8A13F51527231600FB3AAC /* OILInjectable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

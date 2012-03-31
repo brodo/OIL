@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Author.h"
-#import "OILInjectable.h"
+#import "OILContainer.h"
 
 @interface Book : NSObject <OILInjectable>{
     NSString* title;
@@ -17,8 +17,8 @@
 -(Book*)initWithTitle:(NSString*)theTitle;
 -(Book*)initWithTitle:(NSString*)theTitle andAuthor:(Author*)theAuthor;
 
-@property (nonatomic) NSString* title;
-@property (nonatomic) Author* author;
-@property (nonatomic) Author* injectedAuthor;
+@property (nonatomic, retain) NSString* title;
+@property (nonatomic, retain) Author* author;
+@property (nonatomic, retain) Author* injectedAuthor;
 
 @end

@@ -17,7 +17,6 @@ static OILContainer* globalContainer;
 -(id)getNewForClass:(Class)theClass;
 -(id)getNewForProtocol:(Protocol*)theProtocol;
 -(void)setUpSetterInjection;
--(id)universalGetter;
 
 @end
 
@@ -133,6 +132,18 @@ static OILContainer* globalContainer;
     return retunObject;
 }
 
+id replacementGetter(id self, SEL _cmd, ...){
+    NSString* selector = NSStringFromSelector(_cmd);
+    NSString* name = [selector substringFromIndex:8];
+    Ivar var = class_getInstanceVariable([self class], [selector cStringUsingEncoding:NSASCIIStringEncoding]);
+    id returnVal = object_getIvar(self, var);
+    
+    if (!returnVal) {
+        returnVal = [[OILContainer container] getInstance:NSClassFromString(name)];
+    }
+    return returnVal;
+}
+
 -(void)setUpSetterInjection{
     // Get all Classes 
     int numClasses;
@@ -140,8 +151,6 @@ static OILContainer* globalContainer;
     
     classes = NULL;
     numClasses = objc_getClassList(NULL, 0);
-    NSLog(@"Number of classes: %d", numClasses);
-    
     if (numClasses > 0 )
     {
         classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
@@ -152,8 +161,8 @@ static OILContainer* globalContainer;
                 objc_property_t *  properties = class_copyPropertyList(classes[i], &numProperites);
                 for (int j = 0; j < numProperites; j++) {
                     NSString* propertyName =[NSString stringWithCString:property_getName(properties[j]) encoding:NSASCIIStringEncoding];
-                    if ([[propertyName substringToIndex:8] isEqualToString:@"injected"]) {
-                        
+                    if ([propertyName length] > 8 && [[propertyName substringToIndex:8] isEqualToString:@"injected"]) {
+                        class_replaceMethod(classes[i], NSSelectorFromString(propertyName), replacementGetter, "@@:");
                     }
                 }
             }
@@ -163,8 +172,9 @@ static OILContainer* globalContainer;
 }
 
 
--(id)universalGetter{
-    
-}
+
+
+
+
 
 @end

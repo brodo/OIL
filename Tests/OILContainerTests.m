@@ -41,6 +41,22 @@
     
 }
 
+-(void)testSetterInjection{
+    [[OILContainer container] setInitializer:^id(OILContainer * cont) {
+        return [[Author alloc]initWithFirstName:@"HG" andLastName:@"Wells"];} 
+                         forClass:[Author class]];
+    Book* testBook = [testContainer getInstance:[Book class]];
+    Author* injectedAuthor = testBook.injectedAuthor;
+    GHAssertTrue([injectedAuthor.firstName isEqualToString:@"HG"],@"Setter injection did not work");
+}
+
+
+-(void)testSetterInjectionOverride{
+    Book* testBook = [[OILContainer container] getInstance:[Book class]];
+    testBook.injectedAuthor = [[Author alloc] initWithFirstName:@"William" andLastName:@"Gibson"];
+    GHAssertTrue([testBook.injectedAuthor.firstName isEqualToString:@"William"], @"Overrriding a injected ivar did not work");
+}
+
 -(void)testComplexObject{
     [testContainer setInitializer:^(OILContainer* cont){
          return (id)[[Author alloc] initWithFirstName:@"HG" andLastName:@"Wells"];

@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
+// Use this to mark classes where properties should be injected
+@protocol OILInjectable <NSObject>
+
+@end
+
 
 
 

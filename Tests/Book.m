@@ -10,8 +10,7 @@
 
 @implementation Book
 
-@synthesize title, author;
-@dynamic injectedAuthor;
+@synthesize title, author, injectedAuthor;
 
 -(Book*)initWithTitle:(NSString*)theTitle {
     self = [super init];

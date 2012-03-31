@@ -47,15 +47,76 @@ If you want OIL to use a different init method, or if you want to set certain in
 
 Init blocks take an OILContainer and return the Object which they initialized.
 
+Binding Protocols To Classes
+----------------------------
+
+It is possible to bind a protocol to a certain class which implements the protocol like this:
+
+    //Set up an OILConteainer
+    OILContainer* myContainer = [[OILContainer alloc] init];
+    Protocol* person = @protocol(Person); //'Person' is a protocoll which is implemented by 'Author'
+    [myContainer setInitializer:^(OILContainer* cont){return (id)[[Author alloc] initWithFirstName:@"HG" andLastName:@"Wells"];} forProtocol:person];
+    id<Person> myPerson = [myContainer getInstanceForProtcol:person]; //myPerson is an instance of 'Author'
+   
+
+Singletons
+----------
+
+You can mark a certain class or protocol as singleton, by calling the *markClassAsSingleton* or *markProtocolAsSingleton* methods like so:
+
+```objective-c
+    [myContainer markClassAsSingleton:[MyClass class]];
+    [myContainer markProtocolAsSingleton:@protocol(MyProtocoll)];
+```
+
+Singletons are created lazily, as soon as they are needed.
+
+The Container Singleton
+-----------------------
+
+Use *[OILContainer container]* to get an OILContainer singleton object. It is not ensured or assumed that this is the only Container in the app. 
+
+
+Setter Injection
+--------------------------------
+
+To user setter injection, your class needs to implement the empty *OILInjectable* protocol.
+To inject an object, create a property called *injeced<Class>* of type *<Class>*. In the following example, the injected class in called *Author*
+so the property is called *injectedAuthor*.
+
+**Setter injection currently only works with the global container and with concrete classes.**
+
+**Book.h**
+
+```objective-c
+    #import "Author.h"
+    #import "OILContainer.h"
+    
+    @interface Book : NSObject <OILInjectable>{
+        NSString* title;
+        Author* author;
+    }
+    -(Book*)initWithTitle:(NSString*)theTitle;
+    -(Book*)initWithTitle:(NSString*)theTitle andAuthor:(Author*)theAuthor;
+    
+    @property (nonatomic, retain) NSString* title;
+    @property (nonatomic, retain) Author* injectedAuthor;
+    
+    @end
+```
+
+Injected properties can be overwritten like normal properties. (e.g. for unit testing) 
+
+
 Creating Object Hierarchies
 ---------------------------
 
-In many cases, an object created by OIL is based on other objects which themselves need to be instantiated by OIL. As an example, consider the following Classes:
+In some cases, an object created by OIL is based on other objects which themselves need to be instantiated by OIL. As an example, consider the following Classes:
 
 **Author.h**
 
 ```objective-c
-    @interface Author : NSO:wbject {
+    @interface Author : NSObject {
        NSString* firstName;
        NSString* lastName;
     }
@@ -95,35 +156,12 @@ The class 'Book' depends on 'Author'. In order to let OIL create both the book a
 
 OIL now creates the book with the author HG Wells.
 
-Binding Protocols To Classes
-----------------------------
-
-It is possible to bind a protocol to a certain class which implements the protocol like this:
-
-    //Set up an OILConteainer
-    OILContainer* myContainer = [[OILContainer alloc] init];
-    Protocol* person = @protocol(Person); //'Person' is a protocoll which is implemented by 'Author'
-    [myContainer setInitializer:^(OILContainer* cont){return (id)[[Author alloc] initWithFirstName:@"HG" andLastName:@"Wells"];} forProtocol:person];
-    id<Person> myPerson = [myContainer getInstanceForProtcol:person]; //myPerson is an instance of 'Author'
-   
-
-Singletons
-----------
-
-You can mark a certain class or protocol as singleton, by calling the *markClassAsSingleton* or *markProtocolAsSingleton* methods like so:
-
-```objective-c
-    [myContainer markClassAsSingleton:[MyClass class]];
-    [myContainer markProtocolAsSingleton:@protocol(MyProtocoll)];
-```
-
-Singletons are created lazily, as soon as they are needed.
 
 
 License
 -------
 
-##The MIT License (MIT)
+###The MIT License (MIT)
 Copyright (c) 2012 Julian Dax
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
