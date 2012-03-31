@@ -64,19 +64,19 @@ int main(int argc, char *argv[]) {
   
   NSSetUncaughtExceptionHandler(&exceptionHandler);
   
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+  @autoreleasepool {
   
   // Register any special test case classes
   //[[GHTesting sharedInstance] registerClassName:@"GHSpecialTestCase"];  
   
-  int retVal = 0;
-  // If GHUNIT_CLI is set we are using the command line interface and run the tests
-  // Otherwise load the GUI app
-  if (getenv("GHUNIT_CLI")) {
-    retVal = [GHTestRunner run];
-  } else {
-    retVal = UIApplicationMain(argc, argv, nil, @"GHUnitIPhoneAppDelegate");
+    int retVal = 0;
+    // If GHUNIT_CLI is set we are using the command line interface and run the tests
+    // Otherwise load the GUI app
+    if (getenv("GHUNIT_CLI")) {
+      retVal = [GHTestRunner run];
+    } else {
+      retVal = UIApplicationMain(argc, argv, nil, @"GHUnitIPhoneAppDelegate");
+    }
+    return retVal;
   }
-  [pool release];
-  return retVal;
 }

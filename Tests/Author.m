@@ -23,11 +23,6 @@
     return self;
       
 }
-- (void)dealloc {
-    [firstName release];
-    [lastName release];
-    [super dealloc];
-}
 
 - (NSString*)description {
     return [NSString stringWithFormat:@"%@ %@", firstName, lastName];

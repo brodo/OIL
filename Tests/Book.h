@@ -17,6 +17,7 @@
 -(Book*)initWithTitle:(NSString*)theTitle;
 -(Book*)initWithTitle:(NSString*)theTitle andAuthor:(Author*)theAuthor;
 
-@property (nonatomic,retain) NSString* title;
-@property (nonatomic,retain) Author* author;
+@property (nonatomic) NSString* title;
+@property (nonatomic) Author* author;
+
 @end

@@ -12,12 +12,12 @@
 
 
 @interface OILContainer : NSObject {
-    NSMutableDictionary* classInitializerInfos;
-    NSMutableDictionary* protocolInitializerInfos;
-    NSMutableDictionary* singletonInstances;
-    NSMutableSet* singletons;
-    NSMutableDictionary* protocolSingletonInstances;
-    NSMutableSet* protocolSingletons;
+    NSMutableDictionary* _classInitializerInfos;
+    NSMutableDictionary* _protocolInitializerInfos;
+    NSMutableDictionary* _singletonInstances;
+    NSMutableSet* _singletons;
+    NSMutableDictionary* _protocolSingletonInstances;
+    NSMutableSet* _protocolSingletons;
 }
 
 typedef id(^OILInitBlock) (OILContainer*);
@@ -32,7 +32,7 @@ typedef id(^OILInitBlock) (OILContainer*);
 -(void)markProtocolAsSingleton:(Protocol*) theProtocol;
 -(id)getInstance:(Class)theClass;
 -(id)getInstanceForProtcol:(Protocol*)protocol;
-+(OILContainer*)globalContainer;
++(OILContainer*)container;
 
 @end
 

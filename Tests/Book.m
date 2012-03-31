@@ -34,10 +34,5 @@
     return [NSString stringWithFormat:@"%@ by %@", title, author];
 }
 
-- (void)dealloc {
-    [title release];
-    [author release];
-    [super dealloc];
-}
 
 @end

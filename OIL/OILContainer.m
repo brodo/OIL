@@ -25,50 +25,50 @@ static OILContainer* globalContainer;
 - (id)init {
     self = [super init];
     if (self) {
-        classInitializerInfos = [[NSMutableDictionary alloc] init];
-        protocolInitializerInfos = [[NSMutableDictionary alloc] init];
-        singletons = [[NSMutableSet alloc] init];
-        protocolSingletons = [[NSMutableSet alloc] init];
-        singletonInstances = [[NSMutableDictionary alloc] init];
-        protocolSingletonInstances = [[NSMutableDictionary alloc]init];
+        _classInitializerInfos = [[NSMutableDictionary alloc] init];
+        _protocolInitializerInfos = [[NSMutableDictionary alloc] init];
+        _singletons = [[NSMutableSet alloc] init];
+        _protocolSingletons = [[NSMutableSet alloc] init];
+        _singletonInstances = [[NSMutableDictionary alloc] init];
+        _protocolSingletonInstances = [[NSMutableDictionary alloc]init];
         globalContainer = nil;
     }
     return self;
 }
 
 -(void)setInitializer:(OILInitBlock)block forClass:(Class)theClass {
-    [classInitializerInfos setObject:block forKey:theClass];
+    [_classInitializerInfos setObject:block forKey:theClass];
 }
 
 -(void)setInitializer:(OILInitBlock)block forProtocol:(Protocol*)theProtocol{
-    [protocolInitializerInfos setObject:block forKey:NSStringFromProtocol(theProtocol)];
+    [_protocolInitializerInfos setObject:block forKey:NSStringFromProtocol(theProtocol)];
 }
 
 -(void)removeInitializerForClass:(Class)theClass {
-    [classInitializerInfos removeObjectForKey:theClass];
+    [_classInitializerInfos removeObjectForKey:theClass];
 }
 
 -(void)markClassAsSingleton:(Class)theClass {
-    [singletons addObject:theClass];
+    [_singletons addObject:theClass];
 }
 
 -(void)markProtocolAsSingleton:(Protocol*) theProtocol{
-    [protocolSingletons addObject:theProtocol];
+    [_protocolSingletons addObject:theProtocol];
 }
 
 -(void)markClassAsNormal:(Class)theClass {
-    [singletons removeObject:theClass];
+    [_singletons removeObject:theClass];
 }
 
 -(id)getInstance:(Class)theClass {
-    if ([singletons containsObject:theClass]) {
+    if ([_singletons containsObject:theClass]) {
         return [self getSingletonForClass:theClass];
     }
     return [self getNewForClass:theClass];
 }
 
 -(id)getInstanceForProtcol:(Protocol*)protocol{
-    if ([protocolSingletons containsObject:protocol]) {
+    if ([_protocolSingletons containsObject:protocol]) {
         return [self getSingletonForProtocol:protocol];
     }
     return [self getNewForProtocol:protocol];
@@ -76,21 +76,11 @@ static OILContainer* globalContainer;
 
 
 
-+(OILContainer*)globalContainer {
++(OILContainer*)container {
     if (!globalContainer) {
         globalContainer = [[OILContainer alloc] init];
     }
     return globalContainer;
-}
-- (void)dealloc {
-    [classInitializerInfos release];
-    [singletonInstances release];
-    [singletons release];
-    [globalContainer release];
-    [protocolSingletons release];
-    [protocolInitializerInfos release];
-    [protocolSingletonInstances release];
-    [super dealloc];
 }
 
 @end
@@ -99,8 +89,8 @@ static OILContainer* globalContainer;
 
 -(id)getNewForClass:(Class)theClass {
     id theObject;
-    if ([classInitializerInfos objectForKey:theClass]) {
-        OILInitBlock objectCreator = (OILInitBlock)[classInitializerInfos objectForKey:theClass];
+    if ([_classInitializerInfos objectForKey:theClass]) {
+        OILInitBlock objectCreator = (OILInitBlock)[_classInitializerInfos objectForKey:theClass];
         theObject = objectCreator(self);
     }
     else {
@@ -111,8 +101,8 @@ static OILContainer* globalContainer;
 
 -(id)getNewForProtocol:(Protocol*)theProtocol{
     id theObject;
-    if ([protocolInitializerInfos objectForKey:NSStringFromProtocol(theProtocol)]) {
-        OILInitBlock objectCreator = (OILInitBlock)[protocolInitializerInfos objectForKey:NSStringFromProtocol(theProtocol)];
+    if ([_protocolInitializerInfos objectForKey:NSStringFromProtocol(theProtocol)]) {
+        OILInitBlock objectCreator = (OILInitBlock)[_protocolInitializerInfos objectForKey:NSStringFromProtocol(theProtocol)];
         theObject = objectCreator(self);
     }
     else {
@@ -123,19 +113,19 @@ static OILContainer* globalContainer;
 }
 
 -(id)getSingletonForClass:(Class)theClass{
-    id retunObject = [singletonInstances objectForKey:theClass];
+    id retunObject = [_singletonInstances objectForKey:theClass];
     if (!retunObject) {
         retunObject = [self getNewForClass:theClass];
-        [singletonInstances setObject:retunObject forKey:theClass];
+        [_singletonInstances setObject:retunObject forKey:theClass];
     }
     return retunObject;
 }
 
 -(id)getSingletonForProtocol:(Protocol*) theProtocol{
-    id retunObject = [protocolSingletonInstances objectForKey:NSStringFromProtocol(theProtocol)];
+    id retunObject = [_protocolSingletonInstances objectForKey:NSStringFromProtocol(theProtocol)];
     if (!retunObject) {
         retunObject = [self getNewForProtocol:theProtocol];
-        [protocolSingletonInstances setObject:retunObject forKey:NSStringFromProtocol(theProtocol)];
+        [_protocolSingletonInstances setObject:retunObject forKey:NSStringFromProtocol(theProtocol)];
     }
     return retunObject;
 }

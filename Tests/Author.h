@@ -16,7 +16,7 @@
 
 -(Author*)initWithFirstName:(NSString*)theFistName andLastName:(NSString*)theLastName;
 
-@property(nonatomic,readonly)NSString* firstName;
-@property(nonatomic,readonly)NSString* lastName;
+@property(nonatomic, readonly)NSString* firstName;
+@property(nonatomic, readonly)NSString* lastName;
 
 @end

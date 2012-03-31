@@ -16,7 +16,6 @@
 }
 
 - (void)tearDown {
-    [testContainer release];
     testContainer = nil;
 }  
 
